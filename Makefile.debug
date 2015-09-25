@@ -1,0 +1,4 @@
+CC_DEBUG_FLAGS:=-g3
+AS_DEBUG_FLAGS:=-g3
+
+include Makefile
