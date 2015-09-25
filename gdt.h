@@ -8,7 +8,7 @@ struct gdt_entry {
 	unsigned char	access;		/* flag */
 	unsigned char	granularity;	/* flag; limit, last 4 bits */
 	unsigned char	base_high;	/* base, last 8 bits */
-} __attribute__((packed));		/* no padding */ 
+} __attribute__((packed));		/* no padding */
 
 struct gdt_pointer {
 	unsigned short	limit;		/* size of gdt - 1 */

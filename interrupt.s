@@ -17,7 +17,7 @@
 # parameter: interrupt
 .macro ISR_ERRORCODE int
 	.globl isr\int
-       
+
 	isr\int\():
 		cli			# disable interrupts
 		pushl $\int		# push interrupt number

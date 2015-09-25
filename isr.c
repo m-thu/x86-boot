@@ -52,7 +52,7 @@ void irq_handler(struct int_regs regs)
 		print("unhandled irq: ");
 		print_dec(regs.interrupt);
 		print("\n");
-	}	
+	}
 }
 
 void enable_irq(unsigned char irq)

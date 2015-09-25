@@ -86,7 +86,7 @@ a20_wait:
 # parameter: string offset
 print_string:
 	pushw %bp
-	movw %sp, %bp		
+	movw %sp, %bp
 
 	movw 4(%bp), %si
 	cld
@@ -121,8 +121,8 @@ gdt:
 	.word 0xffff		# limit (lower 16 bits)
 	.word 0x0000		# base (lower 16 bits)
 	.byte 0x00		# base (next 8 bits)
-	.byte 0b10011010	# access byte	
-#	present; ring0; code or data segment; code(=1), execute/read, 
+	.byte 0b10011010	# access byte
+#	present; ring0; code or data segment; code(=1), execute/read,
 #	not accessed
 	.byte 0b11001111	# granularity byte
 #	granularity, 32 bit, always zero, always zero, limit (last 4 bits)

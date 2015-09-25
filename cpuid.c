@@ -34,7 +34,7 @@ void cpuid()
 			for (i = 0; i < 3; ++i) {
 				eax = 0x80000002 + i;
 				asm volatile("cpuid"
-					: "=a" (eax), "=b" (ebx), "=c" (ecx), 
+					: "=a" (eax), "=b" (ebx), "=c" (ecx),
 					  "=d" (edx)
 					: "a" (eax));
 				buf[i*4] = eax;

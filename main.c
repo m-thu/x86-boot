@@ -14,7 +14,7 @@
 void kmain()
 {
 	unsigned int cr0;
-	struct time *time;	
+	struct time *time;
 
 	/* clear screen */
 	init_cursor();
@@ -56,18 +56,7 @@ void kmain()
 	asm volatile ("movl %%cr0, %0" : "=r"(cr0));
 	printf("CR0: %b\n", cr0);
 
-	/*unsigned int *ptr = (unsigned int *)0xA0000000;
-	*ptr = 0x00;
-	unsigned int gen_page_fault = *ptr;*/
 	cpuid();
-/*char buf[]="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-char b2[]="Das ist ein Test\n";
-(void)memcpy(buf, b2, strlen(b2)+1);
-print(buf);
-printf("strlen = %i\n", strlen("Test"));
-unsigned char blubb[10*4];
-memset(blubb, 0xab, 10*4);*/
-	/*int x=1,y=0,z;z=x/y;*/
 
 	/* init realtime clock */
 	print("Setting up realtime clock... ");

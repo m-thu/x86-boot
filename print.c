@@ -11,7 +11,7 @@ static volatile unsigned short *videoram = (unsigned short *)0xb8000;
 static void cursor()
 {
 	unsigned short pos = y*80 + x;
-	
+
 	outb(0x3d4, 0x0f);
 	outb(0x3d5, pos & 0xff);		/* low byte */
 	outb(0x3d4, 0x0e);
