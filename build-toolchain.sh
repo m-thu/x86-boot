@@ -1,6 +1,6 @@
 #!/bin/sh
 TARGET=i686-elf
-PREFIX=~/$(TARGET)
+PREFIX=~/${TARGET}
 BINUTILS=2.24
 GCC=4.9.0
 GMP=5.1.3
@@ -27,7 +27,7 @@ tar xzf binutils-${BINUTILS}.tar.gz
 
 mkdir build-binutils
 cd build-binutils
-../binutils-${BINUTILS}/configure --target=$TARGET --prefix=$PREFIX --disable-nls --disable-werror
+../binutils-${BINUTILS}/configure --target=${TARGET} --prefix=${PREFIX} --disable-nls --disable-werror
 make all -j$(nproc)
 make install
 cd ..
@@ -43,8 +43,8 @@ mv mpfr-${MPFR} gcc-${GCC}/mpfr
 
 mkdir build-gcc
 cd build-gcc
-export PATH=$PATH:$PREFIX/bin
-../gcc-${GCC}/configure --target=$TARGET --prefix=$PREFIX --disable-nls --without-headers --enable-languages=c --disable-werror
+export PATH=${PATH}:${PREFIX}/bin
+../gcc-${GCC}/configure --target=${TARGET} --prefix=${PREFIX} --disable-nls --without-headers --enable-languages=c --disable-werror
 make all-gcc -j$(nproc)
 make all-target-libgcc -j$(nproc)
 make install-gcc
