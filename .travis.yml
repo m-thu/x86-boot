@@ -1,7 +1,7 @@
 language: c
 
 before_install:
-  - sh build-toolchain.sh
+  - sh build-toolchain.sh >/dev/null 2>&1
 
 script:
   - "make image"
