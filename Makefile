@@ -17,17 +17,16 @@ OBJ_ASM:=$(SRC_ASM:.s=.o)
 
 all: boot.bin link
 
-print.c: print.h colors.h
-gdt.c: gdt.h
-idt.c: idt.h
-isr.c: isr.h
-exception.c: exception.h
-keyboard.c: keyboard.h
-timer.c: timer.h
-asm.asm: asm.h
-cpuid.c: cpuid.h
-rtc.c: rtc.h
-ata.c: ata.h
+print.o: print.h colors.h
+gdt.o: gdt.h
+idt.o: idt.h
+isr.o: isr.h
+exception.o: exception.h
+keyboard.o: keyboard.h
+timer.o: timer.h
+cpuid.o: cpuid.h
+rtc.o: rtc.h
+ata.o: ata.h
 
 boot.bin: boot.s
 	$(AS) -o boot.o boot.s
